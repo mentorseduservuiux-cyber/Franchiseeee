@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentors Eduserv Franchise</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="nav-logo">
+        <img src="public/images/de2a8621bc681c8028fe463862b27db4f18f4df1.png" alt="Mentors Eduserv" />
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="#opportunity" class="nav-link">Opportunity</a>
+        <a href="#why-mentors" class="nav-link">Why Mentors</a>
+        <a href="#partner-cta" class="nav-link">Contact</a>
+        <a href="#about" class="nav-link">About</a>
+      </div>
+      <div class="nav-cta">
+        <button class="btn-enquire" id="nav-enquire-btn" onclick="scrollTo('hero')">Enquire</button>
+        <a href="tel:+919264493096" class="btn-phone">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+            <path d="M14.9 11.3c-.74-.63-1.5-1.02-2.24-.4l-.45.37c-.32.27-.93.79-2.06-.48C9.04 9.57 8.62 8.96 8.93 8.64l.37-.37c.71-.71.38-1.51-.18-2.29L8.75 5.5C8.09 4.59 7.4 4.04 6.65 4.69L6.24 5.05C5.14 5.97 4.8 7.29 5.47 8.82c.54 1.23 1.56 2.59 2.89 3.81 1.33 1.23 2.78 2.12 4.08 2.53 1.58.51 2.86.07 3.68-1.05l.31-.43c.55-.81.06-1.53-.69-2.16l-.84-.22z" fill="white"/>
+          </svg>
+          <span class="btn-phone-text">+91 92644 93096</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-label">Franchise</p>
+          <h1 class="hero-title">You Run the Centre</h1>
+          <p class="hero-subtitle">Mentors Eduserv will Power the Growth</p>
+          <div class="hero-divider"></div>
+          <p class="hero-body">Build a high-quality coaching centre with Mentors&#8217; proven academic system, technology and support.</p>
+        </div>
+
+        <div class="enquiry-wrap">
+          <!-- Active form -->
+          <div class="enquiry-card" id="enquiry-card">
+            <div class="enquiry-card-inner">
+              <p class="enquiry-title">Send an Enquiry</p>
+              <form id="enquiry-form" novalidate>
+                <div class="field-group">
+                  <div class="field">
+                    <input type="text" name="name" placeholder="Full Name" autocomplete="name" />
+                    <span class="field-error" id="err-name"></span>
+                  </div>
+                  <div class="field">
+                    <div class="phone-row">
+                      <span class="phone-prefix">+91</span>
+                      <input type="tel" name="phone" placeholder="Phone number" maxlength="10" />
+                    </div>
+                    <span class="field-error" id="err-phone"></span>
+                  </div>
+                  <div class="field">
+                    <input type="text" name="city" placeholder="City" autocomplete="address-level2" />
+                    <span class="field-error" id="err-city"></span>
+                  </div>
+                  <div class="field">
+                    <input type="email" name="email" placeholder="Email Address" autocomplete="email" />
+                    <span class="field-error" id="err-email"></span>
+                  </div>
+                </div>
+                <button type="submit" class="btn-send">Send</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Success state -->
+          <div class="enquiry-success" id="enquiry-success">
+            <div class="enquiry-card-inner">
+              <p class="enquiry-title" style="opacity:.7">Submitted</p>
+              <div class="success-body">
+                <p class="success-heading">Thank You for Your Interest</p>
+                <p class="success-msg">Your franchise enquiry has been submitted successfully. Our team will get in touch with you shortly.</p>
+                <button class="btn-done" onclick="resetForm()">Done</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrolling stats ticker -->
+      <div class="hero-ticker">
+        <div class="ticker-track">
+          <span class="ticker-item"><b>15</b> Years of Excellence</span>
+          <span class="ticker-sep">•</span>
+          <span class="ticker-item"><b>49K+</b> JEE Selections</span>
+          <span class="ticker-sep">•</span>
+          <span class="ticker-item"><b>26K+</b> NEET Selections</span>
+          <span class="ticker-sep">•</span>
+          <span class="ticker-item"><b>17</b> Centres</span>
+          <span class="ticker-sep">•</span>
+          <span class="ticker-item"><b>15</b> Years of Excellence</span>
+          <span class="ticker-sep">•</span>
+          <span class="ticker-item"><b>49K+</b> JEE Selections</span>
+          <span class="ticker-sep">•</span>
+          <span class="ticker-item"><b>26K+</b> NEET Selections</span>
+          <span class="ticker-sep">•</span>
+          <span class="ticker-item"><b>17</b> Centres</span>
+          <span class="ticker-sep">•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section id="founder">
+      <div class="founder-inner">
+        <div class="founder-top-row">
+          <!-- Left: name + role + logos -->
+          <div class="founder-text">
+            <p class="founder-sub">Led by</p>
+            <h2 class="founder-name">Anand Jaiswal</h2>
+            <p class="founder-role">Founder &amp; Director</p>
+            <div class="founder-badges">
+              <img src="public/images/2b7d4d3f346844fb00d5b63a6bef70b28af3e5c3.png" alt="TEDx" class="badge-img" />
+              <img src="public/images/ce81543527637d713349d7e9d71a5955927561e6.png" alt="Josh Talks" class="badge-img badge-img-2" />
+            </div>
+          </div>
+
+          <!-- Photo -->
+          <div class="founder-photo-wrap">
+            <img src="public/images/db4182fd7e19a79b87180a74494cf914bff51e02.png" alt="Anand Jaiswal" class="founder-photo" />
+          </div>
+        </div>
+
+        <!-- Achievement card -->
+        <div class="founder-card">
+          <p class="founder-card-title">Physics Guru of</p>
+          <div class="founder-airs">
+            <p><span class="air-ranks">AIR 1, 2, 8, 15, 26, 40</span> <span class="air-year">(IIT-JEE 2010)</span></p>
+            <p><span class="air-ranks">AIR 1, 3, 4, 22, 29, 51, 61</span> <span class="air-year">(IIT-JEE 2011)</span></p>
+            <p class="air-more">&amp; more</p>
+          </div>
+          <p class="founder-exp">25+ years of teaching experience.</p>
+          <p class="founder-exp">15+ years of experience in top management role</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OPPORTUNITY -->
+    <section id="opportunity">
+      <div class="opp-inner">
+        <div class="opp-left">
+          <h2 class="opp-title">The Opportunity at Glance</h2>
+          <p class="opp-sub">The strength behind the Mentors Eduserv franchise.</p>
+          <img src="public/images/opportunity-illustration.png" alt="" class="opp-illustration" />
+        </div>
+        <div class="opp-grid">
+          <div class="opp-card">
+            <span class="opp-num">01</span>
+            <h3>Centralised Marketing &amp; Lead Generation</h3>
+            <p>Get the power of Mentors' central marketing and lead-generation engine working for your centre.</p>
+          </div>
+          <div class="opp-card">
+            <span class="opp-num">02</span>
+            <h3>Technology Backbone &amp; CRM Ecosystem</h3>
+            <p>Run your centre on Mentors' integrated CRM, student app, testing and digital learning ecosystem.</p>
+          </div>
+          <div class="opp-card">
+            <span class="opp-num">03</span>
+            <h3>Ready-to-Deploy Academic Infrastructure</h3>
+            <p>Deliver a proven academic experience with Mentors' standardised curriculum, content and study systems.</p>
+          </div>
+          <div class="opp-card">
+            <span class="opp-num">04</span>
+            <h3>End-to-End Academic &amp; Customer Operations Support</h3>
+            <p>Get the SOPs, dashboards, quality audits and escalation support needed to run consistently.</p>
+          </div>
+          <div class="opp-card">
+            <span class="opp-num">05</span>
+            <h3>School Outreach &amp; SIP Opportunities</h3>
+            <p>Leverage Mentors' school outreach and SIP network to create additional institutional opportunities.</p>
+          </div>
+          <div class="opp-card">
+            <span class="opp-num">06</span>
+            <h3>Teacher Training &amp; Hiring Support</h3>
+            <p>Build a stronger team with Mentors' hiring frameworks, screening support and structured staff training.</p>
+          </div>
+          <div class="opp-card">
+            <span class="opp-num">07</span>
+            <h3>Proven JEE &amp; NEET Academic System</h3>
+            <p>A structured curriculum, study material, testing methodology and academic framework built specifically for JEE &amp; NEET preparation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NO.1 STATS -->
+    <section id="stats">
+      <p class="stats-no1">No.1</p>
+      <p class="stats-heading">Coaching Institute of Eastern India</p>
+      <div class="stats-cards">
+        <div class="stat-card" style="border-color:#ff4545;">
+          <div class="stat-icon"><img src="public/images/6b4b4db19e1298cd40d75c9eb4241b59e0c39112.png" alt="" /></div>
+          <p class="stat-value" style="color:#ff4545;">Air 1</p>
+          <p class="stat-label">Faculty</p>
+          <p class="stat-sub">JEE Advanced</p>
+        </div>
+        <div class="stat-card" style="border-color:#ff4545;">
+          <div class="stat-icon"><img src="public/images/705620f3a96ffc5dd8dbdbf29526d5790c157843.png" alt="" /></div>
+          <p class="stat-value" style="color:#ff4545;">#15 Years</p>
+          <p class="stat-label">In offline coaching</p>
+          <p class="stat-sub">5 years in online</p>
+        </div>
+        <div class="stat-card" style="border-color:#ffb303;">
+          <div class="stat-icon"><img src="public/images/2ffb5a252b5e05f48ed2753a9fdeb54ee78e35b9.png" alt="" /></div>
+          <p class="stat-value" style="color:#ffc403;">#27 times</p>
+          <p class="stat-label">State rank 1</p>
+          <p class="stat-sub">JEE Main &amp; Adv. | NEET-UG</p>
+        </div>
+        <div class="stat-card" style="border-color:#889eff;">
+          <div class="stat-icon"><img src="public/images/3166da77719a73170b752c0e57346a615b3b7902.png" alt="" /></div>
+          <p class="stat-value" style="color:#889eff;">#17</p>
+          <p class="stat-label">Offline Centres</p>
+          <p class="stat-sub">Tech-equipped</p>
+        </div>
+        <div class="stat-card" style="border-color:#915aff;">
+          <div class="stat-icon"><img src="public/images/4e9cf6becb3e0a291eead026ac6f716df237b1b0.png" alt="" /></div>
+          <p class="stat-value" style="color:#915aff;">49,800 +</p>
+          <p class="stat-label">Selections</p>
+          <p class="stat-sub">in JEE (Main &amp; Adv.)</p>
+        </div>
+        <div class="stat-card" style="border-color:#37bc4a;">
+          <div class="stat-icon"><img src="public/images/047ec6f3f4bf21245e591058fd5206450522e6e6.png" alt="" /></div>
+          <p class="stat-value" style="color:#37bc4a;">26500 +</p>
+          <p class="stat-label">Selections</p>
+          <p class="stat-sub">in NEET-UG</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY MENTORS -->
+    <section id="why-mentors">
+      <div class="why-header">
+        <h2 class="why-title">Most franchises give you a <span class="why-dim">brand</span>.<br>Mentors gives you an <span class="why-orange">operating system.</span></h2>
+      </div>
+      <div class="comparison-table">
+        <div class="cmp-row cmp-head">
+          <div class="cmp-col cmp-col-feature"></div>
+          <div class="cmp-col cmp-col-mentors">
+            <img src="public/images/de2a8621bc681c8028fe463862b27db4f18f4df1.png" alt="Mentors Eduserv" class="cmp-logo" />
+          </div>
+          <div class="cmp-col cmp-col-typical">Typical Coaching Franchise</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-col cmp-col-feature">Marketing &amp; Leads</div>
+          <div class="cmp-col cmp-col-mentors cmp-strong">Central marketing &amp; lead management by Mentors</div>
+          <div class="cmp-col cmp-col-typical cmp-dim">Partner handles marketing and lead generation</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-col cmp-col-feature">Sales Operations</div>
+          <div class="cmp-col cmp-col-mentors cmp-strong">Central CRM, lead qualification &amp; handoff</div>
+          <div class="cmp-col cmp-col-typical cmp-dim">Partner builds and manages the sales function</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-col cmp-col-feature">Technology</div>
+          <div class="cmp-col cmp-col-mentors cmp-strong">App, testing &amp; digital content included in royalty</div>
+          <div class="cmp-col cmp-col-typical cmp-dim">Separate platform / licensing required</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-col cmp-col-feature">Additional Revenue</div>
+          <div class="cmp-col cmp-col-mentors cmp-strong">Counselling &amp; cross-sell built into the model</div>
+          <div class="cmp-col cmp-col-typical cmp-dim">Often separate arrangements &amp; fees</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-col cmp-col-feature">Teacher Hiring</div>
+          <div class="cmp-col cmp-col-mentors cmp-strong">Hiring guidelines + screening support from Mentors</div>
+          <div class="cmp-col cmp-col-typical cmp-dim">Partner manages independently</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-col cmp-col-feature">Ongoing Partnership</div>
+          <div class="cmp-col cmp-col-mentors cmp-strong">Mentors' growth is tied to centre performance</div>
+          <div class="cmp-col cmp-col-typical cmp-dim">Primarily brand + franchise relationship</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNER CTA -->
+    <section id="partner-cta">
+      <div class="partner-card">
+        <svg class="partner-icon" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.5 6.5H34.5V13.5C34.5 15.709 32.709 17.5 30.5 17.5H10.5C8.291 17.5 6.5 15.709 6.5 13.5V6.5Z" fill="black"/>
+          <path d="M10.5 19.5H17.5V34.5H10.5V19.5Z" fill="black"/>
+          <path d="M19.5 19.5H30.5C32.709 19.5 34.5 21.291 34.5 23.5V34.5H19.5V19.5Z" fill="black" fill-opacity="0.921569"/>
+        </svg>
+        <div class="partner-text">
+          <p class="partner-title">Start Your Mentors Partner Centre</p>
+          <p class="partner-address">Parus Lok Commercial Complex, 1st Floor, Boring Road Crossing, Near Quality Corner, Patna–800001</p>
+        </div>
+        <div class="partner-contact">
+          <a href="tel:+919264493096" class="partner-phone">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M14.9 11.3c-.74-.63-1.5-1.02-2.24-.4l-.45.37c-.32.27-.93.79-2.06-.48C9.04 9.57 8.62 8.96 8.93 8.64l.37-.37c.71-.71.38-1.51-.18-2.29L8.75 5.5C8.09 4.59 7.4 4.04 6.65 4.69L6.24 5.05C5.14 5.97 4.8 7.29 5.47 8.82c.54 1.23 1.56 2.59 2.89 3.81 1.33 1.23 2.78 2.12 4.08 2.53 1.58.51 2.86.07 3.68-1.05l.31-.43c.55-.81.06-1.53-.69-2.16l-.84-.22z" fill="white"/></svg>
+            +91&nbsp; 92644&nbsp; 93096
+          </a>
+          <p class="partner-email">franchise@mentorsedu.com</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-inner">
+        <div class="about-text">
+          <h2 class="section-heading">Mentors Eduserv Franchise</h2>
+          <div class="about-body">
+            <p><strong>Your Pathway to Educational Excellence</strong></p>
+            <p>Mentors Eduserv brings 14+ years of offline coaching experience along with online and hybrid coaching expertise to its franchise model. The institute has achieved 7,900+ JEE Advanced, 37,000+ JEE Main and 23,000+ NEET-UG selections, and is positioned as the No. 1 Coaching Institute of Eastern India.</p>
+            <p>As a franchise partner, you receive structured support across infrastructure setup, technology, recruitment, branding and marketing, training, curriculum and educational materials, and ongoing support and monitoring.</p>
+            <p>The academic system is supported from Patna through faculty support, annual and academic planning, test planning, class scheduling, student materials, review meetings and monitoring of academic operations.</p>
+          </div>
+        </div>
+        <div class="carousel-wrap">
+          <div class="carousel" id="carousel">
+            <div class="carousel-track" id="carousel-track">
+              <img src="public/images/carousel-0.png" alt="" class="carousel-slide" />
+              <img src="public/images/carousel-1.png" alt="" class="carousel-slide" />
+              <img src="public/images/carousel-2.png" alt="" class="carousel-slide" />
+              <img src="public/images/ea1d04d63602ef3606ebf9a0b09cb28ce7497a0c.png" alt="" class="carousel-slide" />
+              <img src="public/images/4d985816465a5802817a49639477c8ff926a4c64.png" alt="" class="carousel-slide" />
+            </div>
+          </div>
+          <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FAQS -->
+    <section id="faqs">
+      <div class="faq-section">
+        <h3 class="faq-heading">Frequently Asked Questions</h3>
+        <div class="faq-list" id="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What is the Mentors Eduserv Franchise?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#E1451F" stroke-width="1.667"/></svg>
+            </button>
+            <div class="faq-a">Mentors Eduserv is Eastern India's No. 1 coaching institute with 14+ years of experience, 7,900+ JEE Advanced and 23,000+ NEET-UG selections. The franchise model lets partners run a Mentors-branded coaching centre with full academic, technology, and marketing support from the Patna headquarters.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What are the registration fees for the franchise?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#E1451F" stroke-width="1.667"/></svg>
+            </button>
+            <div class="faq-a">The franchise requires a one-time upfront fee of ₹25 lakh in Year 1. Revenue is shared 25% (Mentors) / 75% (Partner) on core tuition fees, and 50/50 on counselling and cross-sell services. Study materials are charged at ₹2,500 per student per year, and local ad spend is funded by the Partner.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What territory exclusivity do I get?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#E1451F" stroke-width="1.667"/></svg>
+            </button>
+            <div class="faq-a">You receive exclusive district-level rights for Grades 11–12, JEE, and NEET programmes. A Multi-centre Access Centre (MAC) can be opened beyond 30 km for Grade 10 and below courses. No other Mentors franchise will be authorised in your district for the core programmes.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How long is the franchise contract?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#E1451F" stroke-width="1.667"/></svg>
+            </button>
+            <div class="faq-a">The franchise agreement is for 5 years and is extendable on mutually agreed terms. Performance benchmarks and governance reviews (weekly CRM dashboard, monthly business review, quarterly academic audit, and annual commercial review) are built into the contract.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What support does Mentors Eduserv provide?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#E1451F" stroke-width="1.667"/></svg>
+            </button>
+            <div class="faq-a">Mentors provides: central marketing and brand materials, CRM system and leads, student app and LMS, full curriculum and test series, teacher hiring support, school outreach, career counselling, performance dashboards, and a dedicated Relationship Manager for your centre.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How can I apply for the Mentors Eduserv Franchise?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#E1451F" stroke-width="1.667"/></svg>
+            </button>
+            <div class="faq-a">Fill in the enquiry form on this page with your name, phone number, city, and email. Our franchise team will review your application and reach out within 48 hours to discuss territory availability, financials, and the onboarding roadmap.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="public/images/de2a8621bc681c8028fe463862b27db4f18f4df1.png" alt="Mentors Eduserv" class="footer-logo" />
+          <p class="footer-tagline">JEE (Main &amp; Adv.) &nbsp;|&nbsp; NEET-UG &nbsp;|&nbsp; FOUNDATION</p>
+          <p class="footer-desc">We are one of the best coaching in Eastern India for IIT-JEE (Main &amp; Adv.), NEET-UG, and OLYMPIADS.</p>
+          <div class="footer-contact-info">
+            <div class="footer-ci-row">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M13.41 10.17c-.66-.57-1.35-.92-2.01-.36l-.4.33c-.29.24-.84.71-1.86-.43-.97-1.13-1.35-1.69-1.08-1.98l.33-.33c.64-.64.34-1.36-.16-2.06l-.36-.45C7.13 4.01 6.46 3.5 5.74 4.12l-.37.32C4.32 5.31 4.02 6.56 4.65 8.04c.49 1.1 1.4 2.33 2.61 3.43 1.2 1.1 2.5 1.9 3.67 2.28 1.42.46 2.57.06 3.31-.95l.28-.38c.5-.73.05-1.38-.62-1.94l-.49-.31z" fill="#666"/></svg>
+              <a href="tel:+919569668800" class="footer-ci-text">+91 9569668800</a>
+            </div>
+            <div class="footer-ci-row">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#666" stroke-width="1.5" fill="none"/><path d="M2 6.5L9 10.5L16 6.5" stroke="#666" stroke-width="1.5"/></svg>
+              <a href="mailto:info@mentorsedu.com" class="footer-ci-text">info@mentorsedu.com</a>
+            </div>
+            <div class="footer-ci-row footer-ci-address">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="10" rx="1.5" stroke="#666" stroke-width="1.5" fill="none"/><rect x="5" y="13" width="8" height="2" rx="0.5" fill="#666"/><rect x="7" y="15" width="4" height="1" rx="0.5" fill="#666"/></svg>
+              <p class="footer-ci-text"><strong>Corporate Office:</strong><br/>Parus Lok Commercial Complex, 1st Floor, Boring Road Crossing, Near Quality Corner, Patna–800001</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-nav-cols">
+          <div class="footer-nav-col">
+            <a href="#" class="footer-nav-link">Home</a>
+            <a href="#" class="footer-nav-link">About</a>
+            <a href="#" class="footer-nav-link">Centres</a>
+            <a href="#" class="footer-nav-link">Terms &amp; Condition</a>
+          </div>
+          <div class="footer-nav-col">
+            <a href="#" class="footer-nav-link">Results</a>
+            <a href="#" class="footer-nav-link">Gallery</a>
+            <a href="#" class="footer-nav-link">Media Coverage</a>
+            <a href="#" class="footer-nav-link">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-socials">
+          <!-- WhatsApp -->
+          <a href="#" class="footer-social-link" aria-label="WhatsApp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.95-1.42A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.952 7.952 0 01-4.079-1.12l-.292-.174-3.028.87.842-2.98-.19-.307A7.953 7.953 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.29-5.93c-.235-.117-1.39-.686-1.605-.764-.214-.078-.37-.117-.526.117-.156.235-.604.764-.74.92-.137.156-.273.176-.508.059-.235-.117-.99-.365-1.886-1.163-.697-.621-1.168-1.388-1.305-1.622-.137-.235-.015-.362.103-.479.105-.105.235-.274.352-.41.117-.137.156-.235.235-.392.078-.157.039-.294-.02-.41-.059-.118-.526-1.27-.721-1.74-.19-.456-.383-.394-.526-.401h-.45c-.156 0-.41.059-.625.294s-.82.8-.82 1.95.84 2.262.957 2.418c.117.156 1.652 2.525 4.003 3.54.56.241 1 .385 1.34.493.563.178 1.076.153 1.481.093.452-.067 1.39-.569 1.586-1.118.195-.549.195-1.02.136-1.118-.058-.098-.214-.156-.449-.274z" fill="currentColor"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="#" class="footer-social-link" aria-label="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502a2.75 2.75 0 01-1.938 1.946C17.826 20 12 20 12 20s-5.826 0-7.605-.552a2.75 2.75 0 01-1.938-1.946C2 15.72 2 12 2 12s0-3.72.457-5.502a2.75 2.75 0 011.938-1.945C6.174 4 12 4 12 4s5.826 0 7.605.553a2.75 2.75 0 011.938 1.945zM10 15.5l6-3.5-6-3.5v7z" fill="currentColor"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" class="footer-social-link" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+          <!-- Telegram -->
+          <a href="#" class="footer-social-link" aria-label="Telegram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <!-- X / Twitter -->
+          <a href="#" class="footer-social-link" aria-label="X">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" class="footer-social-link" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+        </div>
+        <p class="footer-copy">Copyright (c) 2026 Mentors Eduserv. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
