@@ -108,7 +108,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 /* ─── HERO ───────────────────────────────────────────────────── */
 #hero {
   background: #212121;
-  height: 614px;
+  height: 711px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -356,10 +356,17 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 .ticker-track {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 0;
   white-space: nowrap;
   animation: ticker 22s linear infinite;
   will-change: transform;
+}
+
+.ticker-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 0 0 auto;
 }
 
 .ticker-item {
@@ -373,7 +380,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 
 @keyframes ticker {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-33.333333%); }
 }
 
 /* ─── FOUNDER ────────────────────────────────────────────────── */
@@ -650,28 +657,29 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
   display: flex;
   flex-direction: column;
   gap: 18px;
-  transition: background .25s, border-color .25s, color .25s, opacity .25s, transform .25s, box-shadow .25s;
+  transition: background .45s ease, border-color .45s ease, color .45s ease, opacity .45s ease, transform .25s ease, box-shadow .45s ease;
   cursor: default;
 }
 
 /* State 2: mouse enter — orange */
 .opp-card.state-enter {
-  background: #FF800F;
-  border-color: transparent;
+  background: #ff800f !important;
+  border-color: transparent !important;
 }
 .opp-card.state-enter .opp-num { color: #fff; }
-.opp-card.state-enter p { opacity: .9; }
+.opp-card.state-enter h3 { color: #090909; }
+.opp-card.state-enter p { color: #181818; opacity: 1; }
 
 /* State 4: hover (sustained) — translucent cream */
 .opp-card.state-hover {
-  background: #F5EFE436;
-  border-color: rgba(0,0,0,.2);
+  background: rgba(245,239,228,.36) !important;
+  border-color: transparent !important;
 }
 
 /* State 3: mouse leave — translucent cream */
 .opp-card.state-leave {
-  background: #F5EFE480;
-  border-color: rgba(0,0,0,.2);
+  background: rgba(245,239,228,.8) !important;
+  border-color: transparent !important;
 }
 
 .opp-num {
@@ -704,13 +712,40 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 
 /* ─── NO.1 STATS ─────────────────────────────────────────────── */
 #stats {
-  background: linear-gradient(90deg, rgba(245,239,228,0.5) 0%, rgba(245,239,228,0.5) 100%), #fff;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #faf7f0;
   padding: 64px 72px 72px;
   border-top: 1px solid rgba(9,9,9,.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
+}
+
+#stats::before,
+#partner-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 72%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(224,219,210,.34) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(224,219,210,.34) 1px, transparent 1px);
+  background-size: 36px 36px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,.78) 76%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,.78) 76%, transparent 100%);
+}
+
+#stats > *,
+#partner-cta > * {
+  position: relative;
+  z-index: 1;
 }
 
 .stats-no1 {
@@ -740,10 +775,11 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 
 .stat-card {
   width: 163px;
-  border-width: 1.5px;
-  border-style: solid;
+  border: 1.5px solid transparent;
   border-radius: 215px 215px 0 0;
-  background: #fff;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(to bottom, var(--stat-color) 0%, color-mix(in srgb, var(--stat-color) 72%, white) 58%, rgba(255,255,255,.55) 100%) border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -816,6 +852,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 #why-mentors {
   background: #fff;
   padding: 64px 0;
+  height: 693px;
   border-top: 1px solid rgba(9,9,9,.08);
 }
 
@@ -845,7 +882,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 
 .cmp-row {
   display: grid;
-  grid-template-columns: 217px 1fr 1fr;
+  grid-template-columns: 217px 373px 1fr;
   gap: 10px;
   align-items: center;
   padding: 4px 12px;
@@ -871,7 +908,11 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 
 /* ─── PARTNER CTA ────────────────────────────────────────────── */
 #partner-cta {
-  background: #f5efe4;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #f5efe4;
+  background-image: none;
   padding: 64px 72px 72px;
   display: flex;
   justify-content: center;
@@ -952,6 +993,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 #faqs {
   background: #FAF6EF;
   padding: 64px 72px 72px;
+  height: 721px;
 }
 
 .contact-inner {
@@ -1036,6 +1078,8 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 
 @media (max-width: 1100px) {
+  #why-mentors, #faqs, #site-footer { height: auto; }
+
   /* Founder — mobile: cream top area (text + photo side by side), card below */
   #founder { height: auto; overflow: visible; padding: 0; }
   .founder-inner {
@@ -1114,7 +1158,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
   .footer-bottom { padding: 20px 40px; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
   /* Navbar — matches Figma mobile design: white bg, logo + phone icon only */
   #navbar {
     padding: 0 12px;
@@ -1196,7 +1240,15 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
   /* Why Mentors */
   #why-mentors { padding: 40px 20px 48px; }
   .comparison-table { overflow-x: auto; }
-  .cmp-row { min-width: 580px; }
+  .cmp-row {
+    min-width: 0;
+    grid-template-columns: 68px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4px;
+    padding: 4px 6px;
+  }
+  .cmp-col { font-size: 8px; min-height: 36px; line-height: 1.25; }
+  .cmp-head .cmp-col { min-height: 32px; }
+  .cmp-logo { height: 16px; max-width: 100%; }
 
   /* Partner CTA */
   #partner-cta { padding: 40px 20px 48px; }
@@ -1241,9 +1293,160 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
   .footer-socials { gap: 14px; flex-wrap: wrap; justify-content: center; }
 }
 
+@media (max-width: 767px) {
+  #founder .founder-inner { padding: 36px 30px; }
+  #founder .founder-top-row {
+    padding: 38px 0 0;
+    min-height: 257.63px;
+    margin-bottom: -21px;
+  }
+  #founder .founder-text {
+    flex: 0 0 215px;
+    width: 215px;
+    margin-top: 42px;
+  }
+  #founder .founder-sub {
+    font-size: 20.34px;
+    line-height: 1.25;
+  }
+  #founder .founder-name {
+    font-size: 31.96px;
+    line-height: 1.1;
+    letter-spacing: -1.28px;
+  }
+  #founder .founder-role {
+    font-size: 14.53px;
+    line-height: 1.5;
+    letter-spacing: -.58px;
+  }
+  #founder .founder-badges { margin-top: 32px; }
+  #founder .founder-photo-wrap {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: 177.48px;
+    height: 257.63px;
+    margin-top: 0;
+  }
+  #founder .founder-card {
+    height: 253px;
+    min-height: 253px;
+    margin-top: 0;
+    padding: 28px 45px;
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+  }
+
+  #why-mentors {
+    padding: 40px 0 48px;
+    overflow: hidden;
+  }
+  #why-mentors .why-header {
+    margin-bottom: 28px;
+    padding: 0;
+  }
+  #why-mentors .why-title {
+    width: 330px;
+    max-width: calc(100vw - 42px);
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 1.6;
+  }
+  #why-mentors .comparison-table {
+    width: calc(100% - 24px);
+    max-width: none;
+    margin: 0 0 0 12px;
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  #why-mentors .cmp-row {
+    min-width: 0;
+    width: 956px;
+    grid-template-columns: 157px 373px 347px;
+    gap: 10px;
+    padding: 4px 12px;
+  }
+  #why-mentors .cmp-col {
+    min-height: 42px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  #why-mentors .cmp-head .cmp-col { min-height: 42px; }
+  #why-mentors .cmp-logo { height: 24px; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  #navbar {
+    height: 64px;
+    padding: 0 28px;
+  }
+  .nav-logo img { height: 40px; }
+  .nav-links { gap: 0; }
+  .nav-link { padding: 8px 9px; font-size: 13px; }
+  .nav-cta { gap: 8px; }
+  .btn-enquire.visible { display: inline-flex; }
+  .btn-phone { padding: 6px 12px 6px 9px; font-size: 13px; }
+
+  #hero { height: 660px; min-height: 0; }
+  .hero-content {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 56px 48px 0;
+    gap: 32px;
+  }
+  .hero-text { width: min(50%, 430px); padding: 42px 0; }
+  .hero-title { font-size: 34px; }
+  .hero-subtitle { font-size: 28px; }
+  .hero-body { font-size: 17px; }
+  .enquiry-wrap { width: 360px; }
+  .enquiry-card, .enquiry-success { width: 360px; }
+  #enquiry-form, .success-body { width: 360px; margin-left: 0; padding: 26px 28px; }
+
+  .founder-top-row { padding: 48px 48px 0; min-height: 300px; }
+  .founder-sub { font-size: 24px; }
+  .founder-name { font-size: 38px; }
+  .founder-role { font-size: 18px; }
+  .founder-photo-wrap { width: 210px; height: 270px; margin-top: -48px; }
+  .founder-card { padding: 28px 48px; margin-top: 24px; }
+
+  #opportunity { padding: 56px 0 64px; }
+  .opp-inner { padding: 0 40px; gap: 32px; }
+  .opp-left { width: 230px; }
+  .opp-title { width: 230px; font-size: 25px; }
+  .opp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .opp-card { min-height: 220px; padding: 18px 20px; gap: 12px; }
+  .opp-card h3 { font-size: 18px; }
+  .opp-card p { font-size: 14px; }
+
+  #stats { padding: 52px 32px 60px; }
+  .stat-card { width: 150px; }
+
+  #why-mentors { padding: 56px 32px 64px; }
+  .comparison-table { max-width: 900px; }
+  .cmp-row { grid-template-columns: 160px 1fr 1fr; }
+
+  #partner-cta { padding: 52px 40px 60px; }
+  .partner-card { padding: 36px; gap: 24px; }
+  .partner-title { font-size: 21px; white-space: normal; }
+  .partner-contact { width: 220px; }
+
+  #about, #faqs { padding: 56px 40px 64px; }
+  .about-inner { gap: 40px; padding: 0; }
+  .carousel-wrap, .carousel-contact { width: 320px; }
+
+  .footer-top { padding: 48px 40px 36px; gap: 36px; }
+  .footer-bottom { padding: 20px 40px; }
+}
+
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 #site-footer {
   background: #fff;
+  height: 575px;
   border-top: 1px solid rgba(9,9,9,.1);
 }
 
@@ -1391,4 +1594,8 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
   font-size: 13px;
   color: #999;
   text-align: center;
+}
+
+@media (max-width: 1100px) {
+  #site-footer { height: auto; }
 }

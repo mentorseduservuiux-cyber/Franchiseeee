@@ -149,28 +149,17 @@ initCarousel('carousel-contact-track', 'carousel-contact-dots');
 /* ── Opportunity cards — 4-state interaction ──────────────────── */
 (function () {
   document.querySelectorAll('.opp-card').forEach((card) => {
-    let leaveTimer = null;
-    let enterTimer = null;
+    let hasLeft = false;
 
     card.addEventListener('mouseenter', () => {
-      if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
-      if (enterTimer) { clearTimeout(enterTimer); enterTimer = null; }
-      card.classList.remove('state-leave', 'state-hover');
-      card.classList.add('state-enter');
-      // transition to sustained hover after brief flash
-      enterTimer = setTimeout(() => {
-        card.classList.remove('state-enter');
-        card.classList.add('state-hover');
-      }, 200);
+      card.classList.remove('state-leave', 'state-enter');
+      card.classList.add(hasLeft ? 'state-hover' : 'state-enter');
     });
 
     card.addEventListener('mouseleave', () => {
-      if (enterTimer) { clearTimeout(enterTimer); enterTimer = null; }
+      hasLeft = true;
       card.classList.remove('state-enter', 'state-hover');
       card.classList.add('state-leave');
-      leaveTimer = setTimeout(() => {
-        card.classList.remove('state-leave');
-      }, 450);
     });
   });
 })();
