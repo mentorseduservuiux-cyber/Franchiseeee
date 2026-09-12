@@ -133,6 +133,56 @@ function initCarousel(trackId, dotsId) {
 initCarousel('carousel-track', 'carousel-dots');
 initCarousel('carousel-contact-track', 'carousel-contact-dots');
 
+/* ── Opportunity cards — active card at mobile viewport centre ── */
+(function () {
+  const grid = document.querySelector('.opp-grid');
+  const cards = grid ? [...grid.querySelectorAll('.opp-card')] : [];
+  const mobileQuery = window.matchMedia('(max-width: 767px)');
+  if (!cards.length) return;
+
+  let observer;
+  let scrollFrame;
+
+  function setActiveCard() {
+    const viewportCentre = window.innerHeight / 2;
+    const activeCard = cards.reduce((closest, card) => {
+      const cardCentre = card.getBoundingClientRect().top + card.offsetHeight / 2;
+      const distance = Math.abs(cardCentre - viewportCentre);
+      return !closest || distance < closest.distance ? { card, distance } : closest;
+    }, null)?.card;
+
+    cards.forEach((card) => {
+      const cardCentre = card.getBoundingClientRect().top + card.offsetHeight / 2;
+      card.classList.toggle('is-active', card === activeCard);
+      card.classList.toggle('is-past', card !== activeCard && cardCentre < viewportCentre);
+    });
+  }
+
+  function updateObserver() {
+    observer?.disconnect();
+    cards.forEach((card) => card.classList.remove('is-active', 'is-past'));
+    if (!mobileQuery.matches) return;
+
+    observer = new IntersectionObserver(setActiveCard, {
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: 0
+    });
+    cards.forEach((card) => observer.observe(card));
+    setActiveCard();
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!mobileQuery.matches || scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = null;
+      setActiveCard();
+    });
+  }, { passive: true });
+
+  mobileQuery.addEventListener('change', updateObserver);
+  updateObserver();
+})();
+
 /* ── FAQ accordion ────────────────────────────────────────────── */
 (function () {
   document.querySelectorAll('.faq-q').forEach((btn) => {

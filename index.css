@@ -682,6 +682,23 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
   border-color: transparent !important;
 }
 
+@media (max-width: 767px) {
+  .opp-card.is-active {
+    background: #ff800f;
+    border-color: transparent;
+  }
+
+  .opp-card.is-past {
+    background: rgba(245,239,228,.8);
+    border-color: transparent;
+  }
+
+  .opp-card.is-active .opp-num { color: #fff; }
+  .opp-card.is-active h3,
+  .opp-card.is-active p { color: #181818; }
+  .opp-card.is-active p { opacity: 1; }
+}
+
 .opp-num {
   font-size: 32px;
   font-weight: 700;
