@@ -663,7 +663,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 
 /* State 2: mouse enter — orange */
 .opp-card.state-enter {
-  background: #ff800f !important;
+  background: #ff8c26 !important;
   border-color: transparent !important;
 }
 .opp-card.state-enter .opp-num { color: #fff; }
@@ -684,7 +684,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 
 @media (max-width: 767px) {
   .opp-card.is-active {
-    background: #ff800f;
+    background: #ff8c26;
     border-color: transparent;
   }
 
