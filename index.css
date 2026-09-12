@@ -668,7 +668,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
 }
 .opp-card.state-enter .opp-num { color: #fff; }
 .opp-card.state-enter h3 { color: #090909; }
-.opp-card.state-enter p { color: #181818; opacity: 1; }
+.opp-card.state-enter p { color: #181818; opacity: .85; }
 
 /* State 4: hover (sustained) — translucent cream */
 .opp-card.state-hover {
@@ -696,7 +696,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
   .opp-card.is-active .opp-num { color: #fff; }
   .opp-card.is-active h3,
   .opp-card.is-active p { color: #181818; }
-  .opp-card.is-active p { opacity: 1; }
+  .opp-card.is-active p { opacity: .85; }
 }
 
 .opp-num {
@@ -1232,7 +1232,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; m
   .opp-card { min-height: auto; gap: 10px; padding: 18px 20px; }
   .opp-num { font-size: 28px; }
   .opp-card h3 { font-size: 17px; }
-  .opp-card p { font-size: 14px; }
+  .opp-card p { font-size: 15px; }
 
   /* Stats */
   #stats { padding: 32px 10px 40px; }
