@@ -198,15 +198,19 @@ initCarousel('carousel-contact-track', 'carousel-contact-dots');
 
 /* ── Opportunity cards — 4-state interaction ──────────────────── */
 (function () {
+  const mobileQuery = window.matchMedia('(max-width: 767px)');
+
   document.querySelectorAll('.opp-card').forEach((card) => {
     let hasLeft = false;
 
     card.addEventListener('mouseenter', () => {
+      if (mobileQuery.matches) return;
       card.classList.remove('state-leave', 'state-enter');
       card.classList.add(hasLeft ? 'state-hover' : 'state-enter');
     });
 
     card.addEventListener('mouseleave', () => {
+      if (mobileQuery.matches) return;
       hasLeft = true;
       card.classList.remove('state-enter', 'state-hover');
       card.classList.add('state-leave');
